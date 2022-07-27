@@ -1,5 +1,5 @@
-import db from '../../models/index';
-import user from '../../models/user';
+// import db from '../../models/index';
+// import user from '../../models/user';
 import CRUDService from '../../services/CRUDService';
 
 class HomeController {
@@ -37,6 +37,12 @@ class HomeController {
    async putUser(req, res) {
       let data = req.body;
       await CRUDService.updateUserData(data);
+      res.redirect('/');
+   }
+
+   async deleteUser(req, res) {
+      let userId = req.query.id;
+      await CRUDService.deleteUserData(userId);
       res.redirect('/');
    }
 }

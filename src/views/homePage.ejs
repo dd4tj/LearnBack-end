@@ -15,6 +15,7 @@
    </style>
    <body>
       <h1>Welcome to Home Page</h1>
+      <h2><a href="/create">Add information</a></h2>
       <table style="width: 100%">
          <tr>
             <th>Email</th>
@@ -33,7 +34,7 @@
                <!-- <input type="button" value="Edit"> -->
                <!-- <input type="button" value="Delete"> -->
                <a href="/edit-user-page?id=<%= dataTable[i].id %>" type="button">Edit</a>
-               <a href="" type="button">Delete</a>
+               <a href="/delete-user?id=<%= dataTable[i].id %>" type="button">Delete</a>
             </td>
          </tr>
          <% } %>
