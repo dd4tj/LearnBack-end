@@ -33,8 +33,12 @@
             <td>
                <!-- <input type="button" value="Edit"> -->
                <!-- <input type="button" value="Delete"> -->
-               <a href="/edit-user-page?id=<%= dataTable[i].id %>" type="button">Edit</a>
-               <a href="/delete-user?id=<%= dataTable[i].id %>" type="button">Delete</a>
+               <div class="btn-group">
+                  <button><a href="/edit-user-page?id=<%= dataTable[i].id %>" type="button">Edit</a></button>
+                  <form method="POST" action="/delete-user?_method=DELETE&id=<%= dataTable[i].id %>">
+                     <button type="submit">Delete</button>
+                  </form>
+               </div>
             </td>
          </tr>
          <% } %>
