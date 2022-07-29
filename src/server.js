@@ -9,6 +9,18 @@ require('dotenv').config();
 let PORT = process.env.PORT || 8080;
 let app = express();
 
+// alow cors for all requests from all domains
+app.use((req, res, next) => {
+	res.header('Access-Control-Allow-Origin', process.env.URL);
+	res.header(
+		'Access-Control-Allow-Headers',
+		'Content-Type,Content-Length, Authorization, Accept,X-Requested-With'
+	);
+	res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS, PATCH');
+   res.header('Access-Control-Allow-Credentials', true);
+	next();
+});
+
 // config app
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -20,5 +32,5 @@ initWebRoutes(app);
 connectDB();
 
 app.listen(PORT, () => {
-   console.log(`Backend Nodejs is running on the port: ${PORT}`);
+	console.log(`Backend Nodejs is running on the port: ${PORT}`);
 });
