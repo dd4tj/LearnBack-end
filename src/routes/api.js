@@ -14,6 +14,7 @@ router.get('/get-allcodes', userController.handleGetAllCodes);
 // api doctor
 router.get('/top-doctor-home', doctorController.handleTopDoctorHome);
 router.get('/get-all-doctors', doctorController.handleGetAllDoctors);
-
+router.post('/save-info-doctor', doctorController.handlePostInfoDoctor);
+router.get('/get-info-doctor-by-id', doctorController.handleGetInfoDoctorById);
 
 module.exports = router;

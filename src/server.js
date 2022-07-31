@@ -21,12 +21,11 @@ app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Credentials', true);
 	next();
 });
-
 // khi gặp path này, sẽ kiểm tra với định dạng là file tĩnh cung cấp trong static
 app.use(express.static(path.join(__dirname, 'public')));
 // config app
-app.use(bodyParser.urlencoded({ limit: ' 50mb', extended: true }));
-app.use(bodyParser.json({ limit: ' 50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(methodOverride('_method'));
 viewEngine(app);
 initWebRoutes(app);
