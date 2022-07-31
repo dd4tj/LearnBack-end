@@ -118,6 +118,8 @@ let createUser = (data) => {
 					phoneNumber: data.phoneNumber,
 					gender: data.gender === '1' ? true : false,
 					roleId: data.roleId,
+					positionId: data.positionId,
+					image: data.image,
 				});
 
 				resolve({
@@ -172,6 +174,11 @@ let editUser = (data) => {
 						firstName: data.firstName,
 						lastName: data.lastName,
 						address: data.address,
+						phoneNumber: data.phoneNumber,
+						gender: data.gender,
+						positionId: data.positionId,
+						roleId: data.roleId,
+						image: data.image,
 					},
 					{ where: { id: data.id } }
 				);
