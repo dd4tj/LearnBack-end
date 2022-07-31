@@ -13,5 +13,7 @@ router.delete('/delete-user', userController.handleDeleteUser);
 router.get('/get-allcodes', userController.handleGetAllCodes);
 // api doctor
 router.get('/top-doctor-home', doctorController.handleTopDoctorHome);
+router.get('/get-all-doctors', doctorController.handleGetAllDoctors);
+
 
 module.exports = router;
